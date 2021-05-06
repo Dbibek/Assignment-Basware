@@ -20,7 +20,7 @@ const useFetchData = () => {
       fetchedData = !fetchedData;
     };
   }, []);
-  console.log(players);
+
   return { players, error };
 };
 export default useFetchData;

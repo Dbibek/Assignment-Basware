@@ -55,12 +55,20 @@
       <!-- error input field -->
 
       <label class="custom-field4">
-        <input type="text" required />
+        <input
+          class="custom-field4-input"
+          type="text"
+          required
+          onclick="changeColor()"
+          onblur="onBlur()"
+        />
         <span class="placeholder">Enter Text</span>
       </label>
       <p class="error">
         <i class="fas fa-info-circle"></i>Component specific information
       </p>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>

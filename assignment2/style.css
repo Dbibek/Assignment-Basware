@@ -145,24 +145,16 @@ p {
   color: #00000099;
   font-size: 14px;
   letter-spacing: 0;
+  pointer-events: eye;
 }
 
 .custom-field3 .placeholder {
-  display: none;
   position: absolute;
   left: 12px;
-  top: calc(50% + 10px);
-  transform: translateY(-50%);
-  color: #00000099;
-  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
-}
-
-.custom-field3 input:valid + .placeholder,
-.custom-field3 input:focus + .placeholder {
-  display: block;
-  top: 10px;
+  top: 5px;
   font-size: 10px;
   color: #00000099;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
 }
 
 .custom-field4 {
@@ -172,12 +164,16 @@ p {
   margin-bottom: 5px;
 }
 
+.custom-field4 input:hover {
+  border: 1px solid #00000042;
+}
+
 .custom-field4 input:focus {
   border: 1px solid #f95459;
 }
 
 .error {
-  color: #f95459;
+  color: #00000099;
 }
 
 .custom-field4 .placeholder {
