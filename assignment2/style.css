@@ -21,8 +21,7 @@
   padding-top: 20px;
   margin-bottom: 5px;
 }
-
-input {
+.custom-field input {
   border: 1px solid #0000001f;
   -webkit-appearance: none;
   -ms-appearance: none;
@@ -35,15 +34,12 @@ input {
   outline: none;
   font-size: 14px;
 }
-
 .custom-field input:hover {
   border: 1px solid #00000042;
 }
-
 .custom-field input:focus {
   border: 1px solid #00000099;
 }
-
 .custom-field .placeholder {
   position: absolute;
   left: 12px;
@@ -52,12 +48,39 @@ input {
   color: #00000099;
   transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
 }
-
 .custom-field input:valid + .placeholder,
 .custom-field input:focus + .placeholder {
   top: 10px;
   font-size: 10px;
   color: #00000099;
+}
+.custom-field.focused input:focus {
+  border: 1px solid #00a9ce;
+}
+.custom-field.focused input:focus + .placeholder {
+  color: #00a9ce;
+}
+.custom-field.disabled input {
+  background-color: #0000000a;
+  border: 1px solid #0000000a;
+  pointer-events: none;
+}
+.custom-field.readonly input:focus + .placeholder,
+.custom-field.readonly .placeholder {
+  top: 5px;
+  font-size: 10px;
+}
+.custom-field.error {
+  color: #00000099;
+}
+.custom-field.error input:focus {
+  border: 1px solid #f95459;
+}
+.custom-field.dirty + .errormessage {
+  color: #f95459;
+}
+.custom-field.dirty input {
+  border: 1px solid #f95459;
 }
 
 p {
@@ -73,123 +96,6 @@ p {
   opacity: 1;
   font-size: 10px;
   margin-right: 4px;
-}
-
-.custom-field1 {
-  position: relative;
-  font-size: 14px;
-  padding-top: 20px;
-  margin-bottom: 5px;
-}
-
-.custom-field1 input:hover {
-  border: 1px solid #00000042;
-}
-
-.custom-field1 input:focus {
-  border: 1px solid #00a9ce;
-}
-
-.custom-field1 .placeholder {
-  position: absolute;
-  left: 12px;
-  top: calc(50% + 10px);
-  transform: translateY(-50%);
-  color: #00000099;
-  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
-}
-
-.custom-field1 input:valid + .placeholder,
-.custom-field1 input:focus + .placeholder {
-  top: 10px;
-  font-size: 10px;
-  color: #00a9ce;
-}
-
-.custom-field2 {
-  position: relative;
-  font-size: 14px;
-  padding-top: 20px;
-  margin-bottom: 5px;
-}
-
-.custom-field2 input:hover {
-  border: 1px solid #0000000a;
-}
-
-.custom-field2 input[type=text]:disabled {
-  pointer-events: none;
-  background-color: #0000000a;
-}
-
-.custom-field2 .placeholder {
-  position: absolute;
-  left: 12px;
-  top: calc(50% + 10px);
-  transform: translateY(-50%);
-  color: #00000061;
-}
-
-.custom-field3 {
-  position: relative;
-  font-size: 14px;
-  padding-top: 20px;
-  margin-bottom: 5px;
-}
-
-.custom-field3 input:hover {
-  border: 1px solid #00000042;
-}
-
-.custom-field3 input {
-  color: #00000099;
-  font-size: 14px;
-  letter-spacing: 0;
-  pointer-events: eye;
-}
-
-.custom-field3 .placeholder {
-  position: absolute;
-  left: 12px;
-  top: 5px;
-  font-size: 10px;
-  color: #00000099;
-  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
-}
-
-.custom-field4 {
-  position: relative;
-  font-size: 14px;
-  padding-top: 20px;
-  margin-bottom: 5px;
-}
-
-.custom-field4 input:hover {
-  border: 1px solid #00000042;
-}
-
-.custom-field4 input:focus {
-  border: 1px solid #f95459;
-}
-
-.error {
-  color: #00000099;
-}
-
-.custom-field4 .placeholder {
-  position: absolute;
-  left: 12px;
-  top: calc(50% + 10px);
-  transform: translateY(-50%);
-  color: #00000099;
-  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
-}
-
-.custom-field4 input:valid + .placeholder,
-.custom-field4 input:focus + .placeholder {
-  top: 10px;
-  font-size: 10px;
-  color: #00000099;
 }
 
 /*# sourceMappingURL=style.css.map */

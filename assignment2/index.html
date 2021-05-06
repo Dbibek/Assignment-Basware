@@ -22,49 +22,43 @@
     <div class="container">
       <!-- empty  input field -->
 
-      <label class="custom-field">
+      <div class="custom-field">
         <input type="text" required />
         <span class="placeholder">Enter Text</span>
-      </label>
+      </div>
       <p><i class="fas fa-info-circle"></i>Component specific information</p>
 
       <!-- focused input field -->
 
-      <label class="custom-field1">
+      <div class="custom-field focused">
         <input type="text" required />
         <span class="placeholder">Enter Text</span>
-      </label>
+      </div>
       <p><i class="fas fa-info-circle"></i>Component specific information</p>
 
       <!-- disabled input field -->
 
-      <label class="custom-field2">
-        <input type="text" disabled="disabled" required tabindex="-1" />
-        <span class="placeholder" disabled="disabled">Enter Text</span>
-      </label>
+      <div class="custom-field disabled">
+        <input type="text" disabled required tabindex="-1" />
+        <span class="placeholder" disabled>Enter Text</span>
+      </div>
       <p><i class="fas fa-info-circle"></i>Component specific information</p>
 
       <!-- readonly input field -->
 
-      <label class="custom-field3">
+      <div class="custom-field readonly">
         <input type="text" value="Enter Text" required readonly />
         <span class="placeholder">Enter Text</span>
-      </label>
+      </div>
       <p><i class="fas fa-info-circle"></i>Component specific information</p>
 
       <!-- error input field -->
 
-      <label class="custom-field4">
-        <input
-          class="custom-field4-input"
-          type="text"
-          required
-          onclick="changeColor()"
-          onblur="onBlur()"
-        />
+      <div class="custom-field error">
+        <input id="errorinput" type="text" required onblur="onBlur()" />
         <span class="placeholder">Enter Text</span>
-      </label>
-      <p class="error">
+      </div>
+      <p class="errormessage">
         <i class="fas fa-info-circle"></i>Component specific information
       </p>
     </div>

@@ -3,21 +3,26 @@ import useFetchData from "./Hooks/useFetchData";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 
 export default function Table() {
-  const { players, error } = useFetchData();
+  const { players } = useFetchData();
 
-  const editableCellStyle = { backgroundColor: "white", cursor: "text" };
+  const editableCellStyle = {
+    cursor: "text",
+    boxShadow: "inset 0 0 2px #000",
+    marginLeft: "10px",
+    background: "white",
+  };
   const nonEditableCellStyle = {
     backgroundColor: "#CCC",
     pointerEvents: "none",
     opacity: 0.5,
+    marginLeft: "10px",
   };
   return (
-    <div className="ag-theme-alpine" style={{ height: "100vh", width: "100%" }}>
+    <div className="ag-theme-alpine" style={{ height: "100vh" }}>
       <div
         id="myGrid"
         style={{
           height: "100%",
-          width: "100%",
         }}
         className="ag-theme-alpine"
       >
@@ -37,6 +42,7 @@ export default function Table() {
           />
           <AgGridColumn
             field="date"
+            width="150px"
             editable={true}
             cellStyle={editableCellStyle}
           />
