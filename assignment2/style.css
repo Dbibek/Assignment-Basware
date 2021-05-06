@@ -1,69 +1,199 @@
 .container {
-  font: "Fira Sans", sans-serif;
-  display: grid;
-  justify-content: center;
-}
-
-.container__singlediv {
-  align-items: center;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
 }
 
-.labeldiv input {
-  margin-left: 10px;
-  width: 300px;
-  height: 36px;
-  text-align: left;
-  font: normal normal normal 14px/20px "Fira Sans", sans-serif;
-  letter-spacing: 0px;
-  color: #0000008a;
-  background: #ffffff 0% 0% no-repeat padding-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+input {
   border: 1px solid #0000001f;
-  border-radius: 4px;
-  opacity: 1;
-  padding: 8px 12px;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
 }
 
-label {
-  text-align: right;
-  font: normal normal normal 14px/20px "Fira Sans", sans-serif;
-  letter-spacing: 0px;
-  color: #999999;
-  opacity: 1;
+.custom-field input:hover {
+  border: 1px solid #00000042;
+}
+
+.custom-field input:focus {
+  border: 1px solid #00000099;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #00000099;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: #00000099;
 }
 
 p {
-  margin-left: 56px;
-  text-align: left;
-  font: normal normal medium 14px/20px "Fira Sans", sans-serif;
-  letter-spacing: 0px;
-  color: #00000099;
   opacity: 1;
-}
-
-.container__info {
-  height: 17px;
-}
-
-.container__info > p {
-  text-align: left;
-  font: "Fira Sans", sans-serif;
-  font-size: 12px;
-  letter-spacing: 0px;
+  font: normal normal normal 12px/20px "Fira Sans", sans-serif;
+  position: relative;
+  right: 30px;
+  top: -1.5%;
   color: #00000099;
-  opacity: 1;
-}
-
-span {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
 }
 
 .fas {
   opacity: 1;
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+.custom-field1 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field1 input:hover {
+  border: 1px solid #00000042;
+}
+
+.custom-field1 input:focus {
+  border: 1px solid #00a9ce;
+}
+
+.custom-field1 .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #00000099;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+
+.custom-field1 input:valid + .placeholder,
+.custom-field1 input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: #00a9ce;
+}
+
+.custom-field2 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field2 input:hover {
+  border: 1px solid #0000000a;
+}
+
+.custom-field2 input[type=text]:disabled {
+  pointer-events: none;
+  background-color: #0000000a;
+}
+
+.custom-field2 .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #00000061;
+}
+
+.custom-field3 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field3 input:hover {
+  border: 1px solid #00000042;
+}
+
+.custom-field3 input {
+  color: #00000099;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.custom-field3 .placeholder {
+  display: none;
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #00000099;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+
+.custom-field3 input:valid + .placeholder,
+.custom-field3 input:focus + .placeholder {
+  display: block;
+  top: 10px;
+  font-size: 10px;
+  color: #00000099;
+}
+
+.custom-field4 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field4 input:focus {
+  border: 1px solid #f95459;
+}
+
+.error {
+  color: #f95459;
+}
+
+.custom-field4 .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #00000099;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+
+.custom-field4 input:valid + .placeholder,
+.custom-field4 input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: #00000099;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,66 +1,209 @@
 $font-stack: "Fira Sans", sans-serif;
-//font-size
-$small:""
 
+//colors
+// $background-color: #f2f2f2;
+$background-color: #ffffff;
+$text-color: #00000042;
+$focus-color: #00a9ce;
+$error-color: #f95459;
+$field-color: #00000061;
+$label-color: #00000099;
+$disabled-color: #0000000a;
+
+//font-size
 .container {
-  font: $font-stack;
-  display: grid;
-  justify-content: center;
-}
-.container__singlediv {
-  align-items: center;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-stack;
+  font-size: 16px;
 }
-.labeldiv {
-  input {
-    margin-left: 10px;
-    width: 300px;
-    height: 36px;
-    text-align: left;
-    font: normal normal normal 14px/20px $font-stack;
-    letter-spacing: 0px;
-    color: #0000008a;
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #0000001f;
-    border-radius: 4px;
-    opacity: 1;
-    padding: 8px 12px;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-label {
-  text-align: right;
-  font: normal normal normal 14px/20px $font-stack;
-  letter-spacing: 0px;
-  color: #999999;
-  opacity: 1;
+
+//////////////////////////////// Default
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
 }
+input {
+  border: 1px solid #0000001f;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $background-color;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+.custom-field input:hover {
+  border: 1px solid $text-color;
+}
+.custom-field input:focus {
+  border: 1px solid $label-color;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: $label-color;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: $label-color;
+}
+
 p {
-  margin-left: 56px;
-  text-align: left;
-  font: normal normal medium 14px/20px $font-stack;
-  letter-spacing: 0px;
-  color: #00000099;
   opacity: 1;
-}
-.container__info {
-  height: 17px;
-}
-.container__info > p {
-  text-align: left;
-  // font: normal normal normal 12px/20px $font-stack;
-  font: $font-stack;
-  font-size: 12px;
-  letter-spacing: 0px;
-  color: #00000099;
-  opacity: 1;
-}
-span {
-  height: 16px;
-  width: 16px;
-  margin-right: 4px;
+  font: normal normal normal 12px/20px $font-stack;
+  position: relative;
+  right: 30px;
+  top: -1.5%;
+  color: $label-color;
 }
 .fas {
   opacity: 1;
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+//////////////////////////////// Onfocus
+
+.custom-field1 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field1 input:hover {
+  border: 1px solid $text-color;
+}
+.custom-field1 input:focus {
+  border: 1px solid $focus-color;
+}
+
+.custom-field1 .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: $label-color;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+.custom-field1 input:valid + .placeholder,
+.custom-field1 input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: $focus-color;
+}
+
+//////////////////////////////// Disabled
+
+.custom-field2 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field2 input:hover {
+  border: 1px solid $disabled-color;
+}
+
+.custom-field2 input[type="text"]:disabled {
+  pointer-events: none;
+  background-color: $disabled-color;
+}
+.custom-field2 .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #00000061;
+}
+/////////////////// Read Only Field
+
+.custom-field3 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field3 input:hover {
+  border: 1px solid $text-color;
+}
+.custom-field3 input {
+  color: $label-color;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.custom-field3 .placeholder {
+  display: none;
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: $label-color;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+.custom-field3 input:valid + .placeholder,
+.custom-field3 input:focus + .placeholder {
+  display: block;
+  top: 10px;
+  font-size: 10px;
+  color: $label-color;
+}
+
+////// Error input field
+
+.custom-field4 {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+// .custom-field4 input:hover {
+//   border: 1px solid $text-color;
+// }
+.custom-field4 input:focus {
+  border: 1px solid $error-color;
+}
+.error {
+  color: $error-color;
+}
+
+.custom-field4 .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: $label-color;
+  transition: top 0.3s ease, top 0.3s ease, top 0.3s ease;
+}
+.custom-field4 input:valid + .placeholder,
+.custom-field4 input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: $label-color;
 }

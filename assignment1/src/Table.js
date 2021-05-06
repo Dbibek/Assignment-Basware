@@ -5,7 +5,7 @@ import { AgGridColumn, AgGridReact } from "ag-grid-react";
 export default function Table() {
   const { players, error } = useFetchData();
 
-  const editableCellStyle = { backgroundColor: "white", cursor: "pointer" };
+  const editableCellStyle = { backgroundColor: "white", cursor: "text" };
   const nonEditableCellStyle = {
     backgroundColor: "#CCC",
     pointerEvents: "none",

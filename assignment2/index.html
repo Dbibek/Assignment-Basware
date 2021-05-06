@@ -20,21 +20,47 @@
   </head>
   <body>
     <div class="container">
-      <div class="container__singlediv">
-        <div class="container__textdiv">
-          <p>Component label</p>
-          <div class="labeldiv">
-            <label>EMPTY</label>
-            <input placeholder="Enter text" type="container__text" />
-          </div>
-          <div class="container__info">
-            <p>
-              <span><i class="fas fa-info-circle"></i></span>Component specific
-              information
-            </p>
-          </div>
-        </div>
-      </div>
+      <!-- empty  input field -->
+
+      <label class="custom-field">
+        <input type="text" required />
+        <span class="placeholder">Enter Text</span>
+      </label>
+      <p><i class="fas fa-info-circle"></i>Component specific information</p>
+
+      <!-- focused input field -->
+
+      <label class="custom-field1">
+        <input type="text" required />
+        <span class="placeholder">Enter Text</span>
+      </label>
+      <p><i class="fas fa-info-circle"></i>Component specific information</p>
+
+      <!-- disabled input field -->
+
+      <label class="custom-field2">
+        <input type="text" disabled="disabled" required tabindex="-1" />
+        <span class="placeholder" disabled="disabled">Enter Text</span>
+      </label>
+      <p><i class="fas fa-info-circle"></i>Component specific information</p>
+
+      <!-- readonly input field -->
+
+      <label class="custom-field3">
+        <input type="text" value="Enter Text" required readonly />
+        <span class="placeholder">Enter Text</span>
+      </label>
+      <p><i class="fas fa-info-circle"></i>Component specific information</p>
+
+      <!-- error input field -->
+
+      <label class="custom-field4">
+        <input type="text" required />
+        <span class="placeholder">Enter Text</span>
+      </label>
+      <p class="error">
+        <i class="fas fa-info-circle"></i>Component specific information
+      </p>
     </div>
   </body>
 </html>
